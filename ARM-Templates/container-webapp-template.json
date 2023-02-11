@@ -3,12 +3,13 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "defaultValue": "peterlu11022023-devops-dev",
+            "defaultValue": "peterlu11022023-devops-dev", 
             "type": "String"
         },
         "hostingPlanName": {
             "defaultValue": "peterlu11022023-devops-asp",
-            "type": "String"
+            "type": "String",
+            "something": "hello" 
         },
         "appInsightsLocation": {
             "defaultValue": "South Central US",
