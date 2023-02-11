@@ -52,8 +52,24 @@ jobs:
     - name: Docker push
       run: docker push $registryName/$repositoryName:$tag
 
+  PushToDev:
+    runs-on: ubuntu-lastest
+    needs: dockerBuildPush
+    environment: 
+      name: dev
+      url: https://whack1devops-dev.azurewebsites.net/
+    steps:
+    - uses: azure/login@v1
+      with: 
+        creds: ${{ secrets.PETERLUSECRET }}
+    - uses: Azure/webapps-deploy@v2
+      with:
+        app-name: 'peterlu11022023-devops-dev'
+        images: '${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}'
+    - name: Azure logout
+      run: |
+        az logout
 
-    
     
     
     
