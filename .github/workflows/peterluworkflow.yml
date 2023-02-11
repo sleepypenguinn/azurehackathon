@@ -17,6 +17,8 @@ on:
         required: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  targetEnv: prod
 jobs:
   # This workflow contains a single job called "greet"
   build-and-deploy:
@@ -45,7 +47,7 @@ jobs:
         resourceGroupName: PeterLuHackathon
         # Specify the path or URL to the Azure Resource Manager template.
         template: ./ARM-Templates/container-webapp-template.json
-        
+        parameters: webAppName=peterlu11022023-${{ env.targetEnv }}
         # Incremental (only add resources to resource group) or Complete (remove extra resources from resource group) or Validate (only validates the template).
         # Specifies the name of the resource group deployment to create.
         # Supply deployment parameter values.
