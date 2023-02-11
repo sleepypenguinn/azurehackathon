@@ -62,7 +62,7 @@ jobs:
     - uses: azure/login@v1
       with: 
         creds: ${{ secrets.PETERLUSECRET }}
-    - uses: Azure/webapps-deploy@v2
+    - uses: azure/webapps-deploy@v2
       with:
         app-name: 'peterlu11022023-devops-dev'
         images: '${{env.registryName}}/${{env.repositoryName}}:${{env.tag}}'
