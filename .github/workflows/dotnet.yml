@@ -48,9 +48,9 @@ jobs:
         # Password or personal access token used to log against the Docker registry
         password: ${{ secretes.ACR_PASSWORD}}
     - name: Docker build
-    - run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
+      run: docker build -t $registryName/$repositoryName:$tag --build-arg build_version=$tag $dockerFolderPath
     - name: Docker push
-    - run: docker push $registryName/$repositoryName:$tag
+      run: docker push $registryName/$repositoryName:$tag
 
 
     
