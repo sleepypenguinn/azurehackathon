@@ -23,7 +23,7 @@
             "type": "String"
         },
         "registryName": {
-            "defaultValue": "peterlu11022023-devopsreg",
+            "defaultValue": "peterlu11022023devopsreg",
             "type": "String"
         },
         "imageName": {
